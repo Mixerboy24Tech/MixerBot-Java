@@ -1,17 +1,17 @@
 package events;
 
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-
-
-public class tervehdys extends ListenerAdapter{
-
-	
-	public void onGuilfMessageReceived(GuildMessageReceivedEvent event) {
-		String messageSent = event.getMessage().getContentRaw();
-		String name = event.getMember().getUser().getName();
-		if(messageSent.equalsIgnoreCase("Hei")){
-			event.getChannel().sendMessage("Tervehdys " + name).queue();
-		}
-	}
+import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.core.hooks.ListenerAdapter;
+ 
+public class tervehdys extends ListenerAdapter {
+  
+	public void onGuildMessageReceived(GuildMessageReceivedEvent e){
+        String[] args = e.getMessage().getContentRaw().split(" ");
+        String name = e.getMember().getUser().getName(); 
+        if(args[0].equalsIgnoreCase("Hei")){
+            if(!e.getMember().getUser().isBot()){ 
+                e.getChannel().sendMessage("Terve " + name).queue();
+            }
+        }
+    }
 }
