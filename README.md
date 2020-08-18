@@ -1,8 +1,8 @@
 ## MixerBot-Java
 MixerBot Java version is 0.5.6 (Alpha Build)    
 
-MixerBot using Java Discord API (JDA)
-https://github.com/DV8FromTheWorld/JDA       
+MixerBot using Java Discord API (JDA)     
+https://github.com/DV8FromTheWorld/JDA (Version: 3.8.0_436)     
 
 ### Features
 ```
