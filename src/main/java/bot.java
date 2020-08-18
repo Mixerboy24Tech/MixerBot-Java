@@ -1,21 +1,16 @@
-import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.JDA;
-import java.beans.EventHandler;
-import net.dv8tion.jda.api.AccountType;
+import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.core.JDABuilder;
+import net.dv8tion.jda.core.AccountType;
 
-//haetaan lis‰osat / komennot
+//haetaan lis√§osat / komennot
 import events.tervehdys;
 
-
-@SuppressWarnings("unused")
 public class bot {
 	
-		@SuppressWarnings("deprecation")
-		public static void main(String[] arguments) throws Exception {
-		JDA jda = new JDABuilder("TOKEN").build();
+		public static void main(String[] args) throws Exception {
+		JDA jda = new JDABuilder(AccountType.BOT).setToken("TOKEN").setAutoReconnect(true).build();
 		
-	
 		jda.addEventListener(new tervehdys());
 		
 	}
-}
+}}
